@@ -8,7 +8,7 @@ python-pptx==0.6.19
 openpyxl==3.0.9
 # uncomment to use huggingface llms
 # huggingface-hub==0.14.1
-tiktoken==0.8.4
+tiktoken==0.4.0
 # uncomment to use instructor embeddings
 # InstructorEmbedding==1.0.1
 # sentence-transformers==2.2.2
