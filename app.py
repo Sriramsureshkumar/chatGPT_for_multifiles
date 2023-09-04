@@ -21,6 +21,7 @@ def get_pdf_text(pdf_docs):
             text += page.extract_text()
     return text
 
+
 from pptx import Presentation
 
 def get_pptx_text(pptx_files):
@@ -29,6 +30,11 @@ def get_pptx_text(pptx_files):
         presentation = Presentation(pptx_file)
         for slide in presentation.slides:
             slide_text = ""
+            
+            # Check if the slide has a title
+            if slide.shapes.title is not None:
+                slide_text += f"Slide Title: {slide.shapes.title.text}\n"
+
             for shape in slide.shapes:
                 if hasattr(shape, "text"):
                     slide_text += shape.text + "\n"
@@ -36,9 +42,10 @@ def get_pptx_text(pptx_files):
                     for row in shape.table.rows:
                         for cell in row.cells:
                             slide_text += cell.text + "\t"  # Use a tab to separate cells
-            text += f"Slide Title: {slide.shapes.title.text}\n"
+            
             text += slide_text
     return text
+
 
 
 def get_xlsx_text(xlsx_files):
