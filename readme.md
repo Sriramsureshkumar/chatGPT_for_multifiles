@@ -2,7 +2,7 @@
 To respond to your inquiries, the application takes the following actions:
 
 
-1. PDF Loading: The application reads various PDF files and extracts the text information from them.
+1. PDF,PPT,Excel Loading: The application reads various files and extracts the text information from them.
 
 
 2. Text Chunking: The retrieved text is broken into manageable-sized chunks for processing.
